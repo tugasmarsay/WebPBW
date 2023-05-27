@@ -22,21 +22,27 @@
         </div>
         <div class="form-group">
             <label for="category">Kategori:</label>
-            <input type="text" name="category" required>
-        </div>
-        <div class="form-group">
-            <label for="price">Harga:</label>
-            <input type="number" name="price" required>
-        </div>
-        <div class="form-group">
-            <label for="image">Gambar:</label>
-            <input type="file" name="image" required>
-        </div>
-        <div class="form-group">
-            <label for="desc">Deskripsi:</label>
-            <textarea name="desc" required></textarea>
-        </div>
-        <button type="submit" name="add_produk">Tambah Produk</button>
+            <select name="category" id="updateCategory" required>
+                <option value="">Pilih kategori</option>
+                <option value="Mouse">Mouse</option>
+                <option value="Keyboard">Keyboard</option>
+                <option value="Mousepad">Mousepad</option>
+                <option value="Headset">Headset</option>
+            </select>
+
+            <div class="form-group">
+                <label for="price">Harga:</label>
+                <input type="number" name="price" required>
+            </div>
+            <div class="form-group">
+                <label for="image">Gambar:</label>
+                <input type="file" name="image" required>
+            </div>
+            <div class="form-group">
+                <label for="desc">Deskripsi:</label>
+                <textarea name="desc" required></textarea>
+            </div>
+            <button type="submit" name="add_produk">Tambah Produk</button>
     </form>
 </body>
 

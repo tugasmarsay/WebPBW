@@ -26,7 +26,7 @@ include "connection.php";
     ?>
     <a href="adminAdd.php" class="add-btn">+</a>
     <section class="show-product">
-        <table>
+        <table id="tableId">
             <thead>
                 <th>Gambar</th>
                 <th>Nama</th>
@@ -64,22 +64,26 @@ include "connection.php";
         <div class="popup-content">
             <span class="close" onclick="closeUpdateForm()">&times;</span>
             <h2>Update Product</h2>
-            <form id="updateForm" method="POST" action="adminEditAction.php">
+            <form id="updateForm" method="POST" action="adminEditAction.php" enctype="multipart/form-data">
                 <input type="hidden" name="id" id="updateId">
                 <label for="name">Nama:</label>
                 <input type="text" name="name" id="updateName" required>
                 <label for="category">Kategori:</label>
-                <input type="text" name="category" id="updateCategory" required>
+                <select name="category" id="updateCategory" required>
+                    <option value="">Pilih kategori</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Keyboard">Keyboard</option>
+                    <option value="Mousepad">Mousepad</option>
+                    <option value="Headset">Headset</option>
+                </select>
+
                 <label for="price">Harga:</label>
                 <input type="number" name="price" id="updatePrice" required>
                 <label for="image">Gambar:</label>
-                <div class="file-upload">
-                    <input type="file" name="image" id="updateImage" required>
-                    Upload File
-                </div>
+                <input type="file" name="image" required>
                 <label for="description">Deskripsi:</label>
-                <textarea name="description" id="updateDescription" required></textarea>
-                <input type="submit" value="Update">
+                <textarea name="desc" id="updateDescription" required></textarea>
+                <input type="submit" name="editproduk" value="Update">
             </form>
         </div>
     </div>

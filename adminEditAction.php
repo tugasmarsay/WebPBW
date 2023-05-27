@@ -1,15 +1,28 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+include "connection.php";
+// Mendapatkan data dari form
 
-<body>
+if (isset($_POST['editproduk'])) {
+    $id = $_POST['id'];
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $cat = $_POST['category'];
+    $desc = $_POST['desc'];
+    $img = $_FILES['image']['name'];
+    $img_temp_name = $_FILES['image']['tmp_name'];
+    $img_folder = 'assets/' . $img;
 
-</body>
-
-</html>
+    // Query UPDATE menggunakan PDO
+    $stmt = $conn->prepare("UPDATE produk SET nama = :name, kategori = :category, price = :price, image = :image, deskripsi = :description WHERE id =:id");
+    $stmt->bindParam(':name', $name);
+    $stmt->bindParam(':category', $cat);
+    $stmt->bindParam(':price', $price);
+    $stmt->bindParam(':image', $img_folder);
+    $stmt->bindParam(':description', $desc);
+    $stmt->bindParam(':id', $id);
+    $stmt->execute();
+    // echo $name . $price . $cat . $desc . $img . $id;
+    header("Location: adminEdit.php");
+    $conn = null;
+}

@@ -31,6 +31,20 @@ textarea {
     resize: none;
 }
 
+select#updateCategory {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+select#updateCategory:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 2px rgba(33, 150, 243, 0.2);
+}
+
 input[type="file"] {
     width: 100%;
     padding: 5px;
