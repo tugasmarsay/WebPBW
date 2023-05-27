@@ -16,9 +16,21 @@ try {
 if ($stmt->rowCount() == 1) {
     header('Location: home.php');
 } else {
-    $_SESSION['login_error'] = "Username atau password salah.";
-    header('location: index.php');
-    exit();
+    try {
+        $stmt2 = $conn->prepare("SELECT * FROM admin WHERE username = :username AND password = :password");
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':password', $password);
+        $stmt->execute();
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    }
+    if ($stmt2->rowCount() == 1) {
+        header('Location: adminEdit.php');
+    } else {
+        $_SESSION['login_error'] = "Username atau password salah.";
+        header('location: index.php');
+        exit();
+    }
 }
 $_SESSION['username'] = $_POST['username'];
 $conn = null;
