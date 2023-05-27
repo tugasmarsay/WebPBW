@@ -211,6 +211,7 @@
             <button type="submit" class="btn">Submit</button>
             <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
+        <div></div>
     </div>
 
     <script>
