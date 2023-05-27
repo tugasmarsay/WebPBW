@@ -1,0 +1,59 @@
+body {
+	font-family: Arial, sans-serif;
+  	display: flex;
+  	justify-content: center;
+}
+
+main {
+	background-color: white;
+  	border: 1px solid #ccc;
+	border-radius: 7px;
+	padding: 20px;
+  	margin-top: 30px;
+	width: 400px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+label {
+	margin-bottom: 5px;
+}
+
+input[type="text"], input[type="password"] {
+	padding: 10px;
+	border: 1px solid black;
+	margin-bottom: 10px;
+}
+
+.form1 input[type="submit"] {
+	padding: 10px 15px;
+  	background-color: #000000;
+  	color: #fff;
+	border: none;
+	cursor: pointer;
+	transition: background-color 0.2s ease;
+}
+
+input[type="submit"]:hover {
+	background-color: #2d2d2d;
+}
+
+.form2 input[type="submit"] {
+  	background-color: white;
+  	color: #555555;
+	border: none;
+	cursor: pointer;
+	margin-top: 10px;
+	transition: background-color 0.2s ease;
+}
+
+.form2 input[type="submit"]:hover {
+  	color: rgb(64, 64, 220);
+}

@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+* {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  box-sizing: border-box;
+}
+
+/* navigasi start */
+.nav-logo a {
+  font-family: 'Tilt Warp', cursive;
+  text-align: right;
+  color: rgb(0, 0, 0);
+  font-weight: bold;
+  font-size: 20px;
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  display: inline;
+}
+
+a {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+}
+
+.nav-menu li {
+  margin: 0;
+  padding: 10px 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu a {
+  color: #313131;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+}
+
+.nav-menu a:hover,
+.nav-menu a:active {
+  color: #00a7ff;
+}
+
+nav img {
+  height: 25px;
+  margin-bottom: -5px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  /* agar logo sebelah kiri nav tengah dan search kanan */
+  align-items: center;
+  padding: 15px 15px 20px;
+}
+
+/* navigasi selesai */
+
+main {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid; */
+  margin: 20px;
+}
+
+main li {
+  font-weight: bold;
+  color: rgb(55, 55, 55);
+  /* border: 1px solid; */
+  margin-left: 30px;
+}
+
+.top ul {
+  /* border: 1px solid; */
+  padding: 20px 20px;
+  border-bottom: 10px solid rgb(173, 173, 173);
+  border-radius: 7px;
+  margin-bottom: 50px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  background-color: #fff;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  font-size: 16px;
+  color: #333;
+}
+
+thead tr {
+  background-color: #f8f8f8;
+}
+
+thead th {
+  padding: 12px;
+  font-weight: bold;
+  text-align: left;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tbody td {
+  padding: 12px;
+  text-align: left;
+  vertical-align: middle;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+button {
+  padding: 10px;
+  background-color: #f8f8f8;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  margin-top: 10px;
+  width: 150px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #414141;
+  color: #f2f2f2;
+}
+
+@media only screen and (max-width: 750px) {}

@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+    box-sizing: border-box;
+}
+
+/* navigasi start */
+.nav-logo a {
+    font-family: 'Tilt Warp', cursive;
+    text-align: right;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    display: inline;
+}
+
+a {
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+}
+
+.nav-menu li {
+    margin: 0;
+    padding: 10px 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-menu a {
+    color: #313131;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-menu a:hover,
+.nav-menu a:active {
+    color: #00a7ff;
+}
+
+nav img {
+    height: 25px;
+    margin-bottom: -5px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    /* agar logo sebelah kiri nav tengah dan search kanan */
+    align-items: center;
+    padding: 15px 15px 20px;
+}
+
+/* navigasi selesai */
+
+main {
+    display: flex;
+    flex-direction: column;
+    /* border: 1px solid; */
+    margin: 20px;
+}
+
+main li {
+    font-weight: bold;
+    color: rgb(55, 55, 55);
+    /* border: 1px solid; */
+    margin-left: 30px;
+}
+
+.top ul {
+    /* border: 1px solid; */
+    padding: 20px 20px;
+    border-bottom: 10px solid rgb(173, 173, 173);
+    border-radius: 7px;
+    margin-bottom: 50px;
+}
+
+
+.container ul {
+    padding: 0 100px;
+}
+
+.container li {
+    padding: 0;
+    margin: 0;
+}
+
+
+h2 {
+    font-size: 26px;
+    margin: 20px 0;
+    text-align: center;
+}
+
+.card {
+    background-color: #ffffff;
+    margin-top: 1em;
+    padding: 1em;
+    border-radius: 5px;
+    box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+    width: 100%;
+}
+
+.image-container {
+    text-align: center;
+}
+
+img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 15em;
+}
+
+.container {
+    padding-top: 1em;
+    color: #110f29;
+}
+
+form {
+    text-align: right;
+}
+
+.remove-button {
+    padding: 10px;
+    display: inline-block;
+    background-color: rgb(216, 216, 216);
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.remove-button:hover {
+    color: rgb(211, 211, 211);
+    background-color: #333;
+}
+
+#cart-total {
+    margin-top: 30px;
+    display: inline-block;
+    text-align: center;
+}
+
+#cart-total p {
+    display: inline-block;
+}
+
+#cart-total button {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 7px;
+    margin: 10px 30px;
+    width: 200px;
+    font-weight: bold;
+    font-size: 15px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
+}
+
+#cart-total button:hover {
+    padding: 10px;
+    border: none;
+    color: rgb(211, 211, 211);
+    background-color: #333;
+}

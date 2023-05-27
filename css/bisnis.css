@@ -1,0 +1,26 @@
+.container {
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+}
+
+#star-rating {
+    display: inline-block;
+}
+
+#star-rating input[type="checkbox"] {
+    display: none;
+}
+
+#star-rating label:before {
+    content: "\2606";
+}
+
+#star-rating label:hover:before,
+#star-rating label:hover~label:before,
+#star-rating input[type="checkbox"]:checked~label:before {
+    content: "\2605";
+}

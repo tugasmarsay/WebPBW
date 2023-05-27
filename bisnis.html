@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Review Produk</title>
+    <link rel="stylesheet" href="css/bisnis.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Review Produk</h1>
+        <form id="review-form">
+            <label for="product-select">Pilih Produk:</label>
+            <select id="product-select"></select>
+            <br><br>
+            <label for="star-rating">Rating:</label>
+            <div id="star-rating">
+                <input type="checkbox" id="star5" name="rating" value="5">
+                <label for="star5"></label>
+                <input type="checkbox" id="star4" name="rating" value="4">
+                <label for="star4"></label>
+                <input type="checkbox" id="star3" name="rating" value="3">
+                <label for="star3"></label>
+                <input type="checkbox" id="star2" name="rating" value="2">
+                <label for="star2"></label>
+                <input type="checkbox" id="star1" name="rating" value="1">
+                <label for="star1"></label>
+            </div>
+            <br><br>
+            <label for="review-text">Review:</label>
+            <textarea id="review-text" rows="4" cols="50"></textarea>
+            <br><br>
+            <button type="submit">Kirim</button>
+        </form>
+    </div>
+    <script src="js/review.js"></script>
+</body>
+
+</html>
