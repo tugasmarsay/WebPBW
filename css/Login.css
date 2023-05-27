@@ -1,15 +1,15 @@
 body {
 	font-family: Arial, sans-serif;
-  	display: flex;
-  	justify-content: center;
+	display: flex;
+	justify-content: center;
 }
 
 main {
 	background-color: white;
-  	border: 1px solid #ccc;
+	border: 1px solid #ccc;
 	border-radius: 7px;
 	padding: 20px;
-  	margin-top: 30px;
+	margin-top: 30px;
 	width: 400px;
 	display: flex;
 	flex-direction: column;
@@ -26,7 +26,8 @@ label {
 	margin-bottom: 5px;
 }
 
-input[type="text"], input[type="password"] {
+input[type="text"],
+input[type="password"] {
 	padding: 10px;
 	border: 1px solid black;
 	margin-bottom: 10px;
@@ -34,8 +35,8 @@ input[type="text"], input[type="password"] {
 
 .form1 input[type="submit"] {
 	padding: 10px 15px;
-  	background-color: #000000;
-  	color: #fff;
+	background-color: #000000;
+	color: #fff;
 	border: none;
 	cursor: pointer;
 	transition: background-color 0.2s ease;
@@ -46,8 +47,8 @@ input[type="submit"]:hover {
 }
 
 .form2 input[type="submit"] {
-  	background-color: white;
-  	color: #555555;
+	background-color: white;
+	color: #555555;
 	border: none;
 	cursor: pointer;
 	margin-top: 10px;
@@ -55,5 +56,5 @@ input[type="submit"]:hover {
 }
 
 .form2 input[type="submit"]:hover {
-  	color: rgb(64, 64, 220);
+	color: rgb(64, 64, 220);
 }

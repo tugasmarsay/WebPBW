@@ -1,0 +1,178 @@
+.show-product table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.show-product th,
+.show-product td {
+    padding: 10px;
+    text-align: center;
+}
+
+.show-product th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+.show-product td img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.show-product .delete-btn,
+.show-product .edit-btn {
+    display: inline-block;
+    padding: 5px 10px;
+    background-color: #e74c3c;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+}
+
+.show-product .edit-btn {
+    background-color: #3498db;
+    border: none;
+    font-size: 100%;
+    cursor: pointer;
+}
+
+.show-product .delete-btn:hover,
+.show-product .edit-btn:hover {
+    background-color: #c0392b;
+}
+
+.add-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #27ae60;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.add-btn:hover {
+    background-color: #219452;
+}
+
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.popup.show {
+    opacity: 1;
+}
+
+.popup-content {
+    background-color: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000;
+    max-width: 500px;
+    width: 100%;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    margin-top: 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    appearance: textfield;
+    -moz-appearance: textfield;
+    -webkit-appearance: textfield;
+    border: 1px solid #ccc;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="submit"] {
+    background-color: #27ae60;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.file-upload {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    border: none;
+    background-color: #4d4d4d;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+.file-upload input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.file-upload:hover {
+    background-color: #219452;
+}
+
+
+input[type="submit"]:hover {
+    background-color: #219452;
+}
