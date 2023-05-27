@@ -18,9 +18,9 @@ if ($stmt->rowCount() == 1) {
 } else {
     try {
         $stmt2 = $conn->prepare("SELECT * FROM admin WHERE username = :username AND password = :password");
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':password', $password);
-        $stmt->execute();
+        $stmt2->bindParam(':username', $username);
+        $stmt2->bindParam(':password', $password);
+        $stmt2->execute();
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     }
