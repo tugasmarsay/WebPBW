@@ -7,6 +7,10 @@ session_start();
 <head>
     <link rel="shortcut icon" href="assets/icon.png">
     <style>
+        @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+        @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
         /* navigasi start */
         .nav-logo a {
             font-family: 'Tilt Warp', cursive;
@@ -176,7 +180,7 @@ session_start();
                 <li><a href="home.php">BERANDA</a></li>
                 <li><a href="produk.php">PRODUK</a></li>
                 <li><a href="riwayat.php">BELANJA</a></li>
-                <li><a href="bisnis.php">BISNIS</a></li>
+                <li><a href="review.php">KOMUNITAS</a></li>
             </ul>
             <div class="nav-acc">
                 <a id="dropdown-trigger">

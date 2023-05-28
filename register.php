@@ -13,7 +13,7 @@
 <body>
     <main>
         <h1>Register</h1>
-        <form name="registerform" action="action_page.php" method="POST">
+        <form name="registerform" onsubmit="return validateForm();" action="action_page.php" method="POST">
             <label for="username">Username:</label>
             <input type="text" id="username" name="username" placeholder="Enter username" required>
             <label for="email">Email:</label>
@@ -39,17 +39,18 @@
             </div>
             <input type="submit" value="Register">
         </form>
+        <a href="index.php" style="margin-top: 10px;">Sudah punya akun? masuk</a>
     </main>
-    <script>
+    '<script>
         function validateForm() {
             var password = document.forms["registerform"]["password"].value;
             var password_confirm = document.forms["registerform"]["password_confirm"].value;
             if (password !== password_confirm) {
-                alert("Password and Confirm Password must match");
+                window.alert("Password berbeda");
                 return false;
             }
         }
-    </script>
+    </script>'
 </body>
 
 </html>

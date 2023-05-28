@@ -1,0 +1,178 @@
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#review-list {
+    margin-top: 20px;
+}
+
+.review {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.review .username {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.review .stars {
+    margin-bottom: 5px;
+}
+
+.review .category {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.review .product-name {
+    margin-bottom: 5px;
+}
+
+.review .options {
+    margin-bottom: 5px;
+}
+
+.review .description {
+    margin-bottom: 10px;
+}
+
+.review .image img {
+    max-width: 100%;
+    margin-top: 10px;
+}
+
+#add-review-btn {
+    display: block;
+    margin: 20px auto;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-form-popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.review-form-container {
+    background-color: #fff;
+    margin: 10% auto;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 500px;
+    position: relative;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #999;
+}
+
+
+
+.review-form-container h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.review-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.review-form-container input[type="text"],
+.review-form-container input[type="email"],
+.review-form-container textarea {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #333;
+}
+
+.review-form-container select {
+    /* width: 100%; */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 16px;
+    color: #333;
+    background-color: #fff;
+}
+
+.checkboxes {
+    display: inline;
+}
+
+.review-form-container .checkboxes p {
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.review-form-container .checkboxes input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.review-form-container textarea {
+    height: 120px;
+}
+
+.review-form-container input[type="submit"] {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.review-form-container input[type="submit"]:hover {
+    background-color: #555;
+}
+
+.review-form-container .error-message {
+    color: #f00;
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+.review-form-container .success-message {
+    color: #008000;
+    margin-top: 5px;
+    font-size: 14px;
+}
