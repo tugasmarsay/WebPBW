@@ -15,16 +15,16 @@
         <h1>Register</h1>
         <form name="registerform" action="action_page.php" method="POST">
             <label for="username">Username:</label>
-            <input type="text" id="username" name="username" placeholder="Enter username">
+            <input type="text" id="username" name="username" placeholder="Enter username" required>
             <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter email">
+            <input type="email" id="email" name="email" placeholder="Enter email" required>
             <label for="password">Password:</label>
-            <input type="password" id="password" name="password" placeholder="Enter password">
+            <input type="password" id="password" name="password" placeholder="Enter password" required>
             <label for="password_confirm">Confirm Password:</label>
-            <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirm password">
+            <input type="password" id="password_confirm" name="password_confirm" placeholder="Confirm password" required>
             <div class="formtgl">
                 <label>Tanggal Lahir:</label>
-                <input type="date" name="lahir">
+                <input type="date" name="lahir" required>
             </div>
             <label>Jenis Kelamin:</label>
             <div class="formjk">
@@ -34,12 +34,22 @@
                 <label for="woman">Perempuan</label>
             </div>
             <div class="term">
-                <input type="checkbox" name="agree">
+                <input type="checkbox" name="agree" required>
                 <p>I agree to the <a href="#">Terms & Policy</a></p>
             </div>
             <input type="submit" value="Register">
         </form>
     </main>
+    <script>
+        function validateForm() {
+            var password = document.forms["registerform"]["password"].value;
+            var password_confirm = document.forms["registerform"]["password_confirm"].value;
+            if (password !== password_confirm) {
+                alert("Password and Confirm Password must match");
+                return false;
+            }
+        }
+    </script>
 </body>
 
 </html>

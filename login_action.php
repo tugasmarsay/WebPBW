@@ -34,11 +34,3 @@ if ($stmt->rowCount() == 1) {
 }
 $_SESSION['username'] = $_POST['username'];
 $conn = null;
-
-$_SESSION['last_activity'] = time();
-$session_timeout = 1800;
-$_SESSION['last_activity'] = time();
-
-// Periksa waktu sesi saat ada permintaan
-if (isset($_SESSION['last_activity']) && (time() - $_SESSION['last_activity'] > $session_timeout)) {
-}

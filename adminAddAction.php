@@ -18,9 +18,9 @@ if (isset($_POST['add_produk'])) {
     if ($stmt) {
         move_uploaded_file($img_temp_name, $img_folder);
         $msg = "produk ditambahkan";
-        header("Location: adminEdit.php?msg=$msg");
-        echo $msg;
+        // echo $msg;
     } else {
         $msg = "produk gagal ditambahkan";
     }
+    header("Location: adminEdit.php?msg=$msg");
 }
