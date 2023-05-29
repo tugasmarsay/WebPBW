@@ -25,6 +25,7 @@ if ($stmt->rowCount() == 1) {
         echo "Error: " . $e->getMessage();
     }
     if ($stmt2->rowCount() == 1) {
+        $_SESSION['username'] = $_POST['username'];
         header('Location: adminEdit.php');
     } else {
         $_SESSION['login_error'] = "Username atau password salah.";

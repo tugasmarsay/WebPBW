@@ -1,6 +1,3 @@
-<?php
-session_start();
-?>
 <!DOCTYPE html>
 <html lang="id">
 
@@ -12,6 +9,10 @@ session_start();
         @import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
 
         /* navigasi start */
+        * {
+            font-family: Arial, sans-serif;
+        }
+
         .nav-logo a {
             font-family: 'Tilt Warp', cursive;
             text-align: right;
@@ -187,11 +188,14 @@ session_start();
                     <img src="https://cdn-icons-png.flaticon.com/512/1077/1077114.png" alt="Acc">
                 </a>
                 <div class="dropdown-content" id="dropdown-content">
-                    <a href="index.php">Logout
-                        <?php
-                        session_unset();
-                        ?></a>
-                    <a href="profile.php">Profile</a>
+                    <?php
+                    if (isset($_SESSION['username'])) {
+                        echo "<a href='index.php'>Logout</a>\n<a href='profile.php'>Profile</a>";
+                    } else {
+                        echo "<a href='index.php'>Login</a>";
+                    }
+                    ?>
+
                 </div>
             </div>
         </nav>

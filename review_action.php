@@ -1,8 +1,9 @@
 <?php
+session_start();
 include "connection.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
+    $username = $_SESSION['username'];
     $stars = $_POST['stars'];
     $category = $_POST['category'];
     $product_name = $_POST['product_name'];
@@ -12,7 +13,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $tmp_image = $_FILES['image']['tmp_name'];
 
     // Upload image
-    move_uploaded_file($tmp_image, "images/$image");
+    move_uploaded_file($tmp_image, "reviews/$image");
 
     // Insert review into database
     $stmt = $conn->prepare("INSERT INTO reviews (username, stars, category, product_name, options, description, image) VALUES (:username, :stars, :category, :product_name, :options, :description, :image)");
@@ -25,6 +26,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt->bindParam(':image', $image);
     $stmt->execute();
 
-    header("Location: index.html");
+    header("Location: review.php");
     exit();
 }

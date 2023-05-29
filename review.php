@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +10,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Product Review</title>
     <link rel="stylesheet" href="css/review.css">
+    <style>
+        label {
+            margin-top: 10px;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .title {
+            margin: 0;
+        }
+
+        .search-input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px;
+            outline: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            flex-grow: 1;
+            margin-left: 10px;
+            max-width: 60%;
+        }
+
+        .search-input::placeholder {
+            color: #999;
+        }
+    </style>
 </head>
 
 <body>
@@ -13,11 +48,18 @@
     include "navigasi.php";
     ?>
     <div class="container">
-        <h1>Product Review</h1>
+        <div class="header">
+            <h2 class="title">Product Review</h2>
+            <input type="text" id="searchInput" class="search-input" placeholder="Search by username or product name" onkeyup="loadReviewList(this.value)">
+        </div>
         <div id="review-list">
             <!-- Review list will be displayed here dynamically -->
         </div>
-        <button id="add-review-btn" onclick="showReviewForm()">Add Review</button>
+        <?php
+        if (isset($_SESSION['username'])) {
+            echo '<button id="add-review-btn" onclick="showReviewForm()">Add Review</button>';
+        }
+        ?>
     </div>
 
     <!-- Review Form Popup -->
@@ -25,10 +67,10 @@
         <div class="review-form-container">
             <span class="close" onclick="closeReviewForm()">&times;</span>
             <h2>Add Review</h2>
-            <form id="review-form" method="POST" action="review_action.php" enctype="multipart/form-data">
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" placeholder="Enter username" required>
-
+            <form id="review-form" method="POST" enctype="multipart/form-data">
+                <?php
+                echo '<input type="hidden" id="username" name="username" value="' . $_SESSION['username'] . '">';
+                ?>
                 <label for="stars">Stars:</label>
                 <select id="stars" name="stars" required>
                     <option value="1">1 Star</option>
@@ -37,9 +79,15 @@
                     <option value="4">4 Stars</option>
                     <option value="5">5 Stars</option>
                 </select>
-
                 <label for="category">Category:</label>
-                <input type="text" id="category" name="category" placeholder="Enter category" required>
+                <select id="category" name="category" required>
+                    <option value="">- Select Category -</option>
+                    <option value="Mouse">Mouse</option>
+                    <option value="Keyboard">Keyboard</option>
+                    <option value="Headset">Headset</option>
+                    <option value="Mousepad">Mousepad</option>
+                </select>
+
 
                 <label for="product_name">Product Name:</label>
                 <input type="text" id="product_name" name="product_name" placeholder="Enter product name" required>

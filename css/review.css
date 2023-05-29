@@ -13,46 +13,11 @@ h1 {
     color: #333;
 }
 
-#review-list {
-    margin-top: 20px;
-}
-
-.review {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin-bottom: 10px;
-}
-
 .review .username {
     font-weight: bold;
     margin-bottom: 5px;
 }
 
-.review .stars {
-    margin-bottom: 5px;
-}
-
-.review .category {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.review .product-name {
-    margin-bottom: 5px;
-}
-
-.review .options {
-    margin-bottom: 5px;
-}
-
-.review .description {
-    margin-bottom: 10px;
-}
-
-.review .image img {
-    max-width: 100%;
-    margin-top: 10px;
-}
 
 #add-review-btn {
     display: block;
@@ -110,6 +75,7 @@ h1 {
     display: block;
     margin-bottom: 5px;
     color: #333;
+    margin-top: 10px;
 }
 
 .review-form-container input[type="text"],
@@ -124,7 +90,6 @@ h1 {
 }
 
 .review-form-container select {
-    /* width: 100%; */
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -153,6 +118,7 @@ h1 {
 
 .review-form-container input[type="submit"] {
     background-color: #333;
+    float: right;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -160,6 +126,7 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
 }
+
 
 .review-form-container input[type="submit"]:hover {
     background-color: #555;
@@ -175,4 +142,30 @@ h1 {
     color: #008000;
     margin-top: 5px;
     font-size: 14px;
+}
+
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 10px;
+}
+
+.review-table tr {
+    border-bottom: 1px solid #ccc;
+}
+
+.review-table td {
+    padding: 8px;
+}
+
+.review-table td:first-child {
+    font-weight: bold;
+    width: 150px;
+    text-align: right;
+    vertical-align: top;
+    padding-right: 15px;
+}
+
+.review-table td:last-child {
+    text-align: left;
 }

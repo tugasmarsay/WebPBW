@@ -26,65 +26,104 @@ document.getElementById("review-form").addEventListener("submit", function (e) {
     xhr.send(formData);
 });
 
-function loadReviewList() {
+
+
+function loadReviewList(searchValue) {
     var reviewListContainer = document.getElementById("review-list");
 
-    // Clear review list container
     while (reviewListContainer.firstChild) {
         reviewListContainer.removeChild(reviewListContainer.firstChild);
     }
 
-    // Fetch review data from database
     var xhr = new XMLHttpRequest();
-    xhr.open("GET", "get_reviews.php", true);
+    var url = "get_reviews.php";
+    if (searchValue !== '') {
+        url += "?search=" + encodeURIComponent(searchValue);
+    }
+    xhr.open("GET", url, true);
     xhr.onload = function () {
         if (xhr.status === 200) {
             var reviews = JSON.parse(xhr.responseText);
-
-            // Create review elements and append to review list container
             reviews.forEach(function (review) {
                 var reviewElem = document.createElement("div");
                 reviewElem.classList.add("review");
 
                 var usernameElem = document.createElement("p");
                 usernameElem.classList.add("username");
-                usernameElem.textContent = "Username: " + review.username;
+                usernameElem.textContent = review.username;
                 reviewElem.appendChild(usernameElem);
 
-                var starsElem = document.createElement("p");
+                var starsElem = document.createElement("div");
                 starsElem.classList.add("stars");
-                starsElem.textContent = "Stars: " + review.stars;
                 reviewElem.appendChild(starsElem);
+                for (var i = 0; i < review.stars; i++) {
+                    var starIcon = document.createElement("img");
+                    starIcon.src = "assets/star.png";
+                    starIcon.classList.add("star-icon");
+                    starIcon.style.width = "20px";
+                    starIcon.style.height = "20px";
+                    starsElem.appendChild(starIcon);
+                }
 
-                var categoryElem = document.createElement("p");
-                categoryElem.classList.add("category");
-                categoryElem.textContent = "Category: " + review.category;
-                reviewElem.appendChild(categoryElem);
 
-                var productNameElem = document.createElement("p");
-                productNameElem.classList.add("product-name");
-                productNameElem.textContent = "Product Name: " + review.product_name;
-                reviewElem.appendChild(productNameElem);
+                var tableElem = document.createElement("table");
+                tableElem.classList.add("review-table");
 
-                var optionsElem = document.createElement("p");
-                optionsElem.classList.add("options");
-                optionsElem.textContent = "Options: " + review.options;
-                reviewElem.appendChild(optionsElem);
+                // Judul Kategori
+                var categoryRow = document.createElement("tr");
+                var categoryTitle = document.createElement("td");
+                categoryTitle.textContent = "Kategori :";
+                var categoryData = document.createElement("td");
+                categoryData.textContent = review.category;
+                categoryRow.appendChild(categoryTitle);
+                categoryRow.appendChild(categoryData);
+                tableElem.appendChild(categoryRow);
 
-                var descriptionElem = document.createElement("p");
-                descriptionElem.classList.add("description");
-                descriptionElem.textContent = "Description: " + review.description;
-                reviewElem.appendChild(descriptionElem);
+                // Judul Nama Produk
+                var productNameRow = document.createElement("tr");
+                var productNameTitle = document.createElement("td");
+                productNameTitle.textContent = "Nama Produk :";
+                var productNameData = document.createElement("td");
+                productNameData.textContent = review.product_name;
+                productNameRow.appendChild(productNameTitle);
+                productNameRow.appendChild(productNameData);
+                tableElem.appendChild(productNameRow);
+
+                // Judul Options
+                var optionsRow = document.createElement("tr");
+                var optionsTitle = document.createElement("td");
+                optionsTitle.textContent = "Options :";
+                var optionsData = document.createElement("td");
+                optionsData.textContent = review.options;
+                optionsRow.appendChild(optionsTitle);
+                optionsRow.appendChild(optionsData);
+                tableElem.appendChild(optionsRow);
+
+                // Judul Deskripsi
+                var descriptionRow = document.createElement("tr");
+                var descriptionTitle = document.createElement("td");
+                descriptionTitle.textContent = "Deskripsi :";
+                // descriptionTitle.textContent = review.image;
+                var descriptionData = document.createElement("td");
+                descriptionData.textContent = review.description;
+                descriptionRow.appendChild(descriptionTitle);
+                descriptionRow.appendChild(descriptionData);
+                tableElem.appendChild(descriptionRow);
+
+                reviewElem.appendChild(tableElem);
+                reviewListContainer.appendChild(reviewElem);
 
                 if (review.image !== "") {
                     var imageElem = document.createElement("div");
                     imageElem.classList.add("image");
                     var imageTag = document.createElement("img");
-                    imageTag.src = "images/" + review.image;
+                    imageTag.src = "reviews/" + review.image;
                     imageElem.appendChild(imageTag);
                     reviewElem.appendChild(imageElem);
+                    imageElem.style.display = "flex";
+                    imageElem.style.justifyContent = "center";
+                    imageTag.style.width = "50%";
                 }
-
                 reviewListContainer.appendChild(reviewElem);
             });
         }
@@ -93,4 +132,4 @@ function loadReviewList() {
 }
 
 // Load initial review list
-loadReviewList();
+loadReviewList('');
